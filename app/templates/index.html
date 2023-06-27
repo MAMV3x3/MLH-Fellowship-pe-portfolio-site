@@ -41,8 +41,9 @@
         </div>
         <h1>{{ title }}</h1>
     </div>
-  
-  <div class="education-section">
+
+        
+    <div class="education-section">
         <h2>Education</h2>
         
         <div class="member-tabs">
@@ -68,34 +69,8 @@
             </ul>
             {% endfor %}
         </div>
-      
-        <script src="{{ url_for('static', filename='scripts/opentab.js') }}"></script>
-  </div>
-  
-    <div class="work">
-        <h2><u>Work Experience</u></h2>
+    </div>
 
-        <div class="work-selector">
-            {% for person in people %}
-                <button class="work-selector-button inactive {{person}}" onclick="openWorkTab('{{person}}')">
-                    {{person}}
-                </button>
-            {% endfor %}
-        </div>
-
-        {% for experience in experiences %}
-            <div class="work-experience {{experience.holder}} inactive">
-                <img src="./static/img/{{experience.photo}}" />
-                <div class="position"><h3>{{experience.position}}</h3></div>
-                <div class="company"><h4>{{experience.company}}</h4></div>
-                <div class="dates"><i>{{experience.dates}}</i><hr></div>
-                <div class="description">{{experience.description}}</div>
-            </div>
-        {% endfor %}
-      
-      <script src="{{ url_for('static', filename='scripts/openworktab.js') }}"></script>
-  </div> 
-      
     <div class="map-container">
         <div class="map-text">
             <h2>Places we've been to</h2>
@@ -112,8 +87,9 @@
         </div>
         <div class="map">
             {{ map|safe }}
-      </div>
-    </div> 
+        </div>
+    </div>
 
+    <script src="{{ url_for('static', filename='scripts/opentab.js') }}"></script> 
 </body>
 </html>
